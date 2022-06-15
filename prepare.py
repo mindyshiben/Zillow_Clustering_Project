@@ -28,7 +28,7 @@ def remove_outliers(df):
 
 def handle_nulls(df): 
 
-    df = df.drop(columns=['calculatedbathnbr', 'finishedsquarefeet12', 'fullbathcnt', 'propertycountylandusecode', 'propertylandusetypeid', 'id', 'id.1'], axis=1)
+    df = df.drop(columns=['calculatedbathnbr', 'finishedsquarefeet12', 'fullbathcnt', 'id', 'id.1'], axis=1)
     df = df.drop(columns=['buildingqualitytypeid', 'regionidcity', 'regionidzip', 'regionidneighborhood', 'roomcnt', 'unitcnt'], axis=1)
     df = df.drop(columns=['numberofstories','structuretaxvaluedollarcnt', 'landtaxvaluedollarcnt', 'taxvaluedollarcnt', 'taxamount', 'assessmentyear'],  axis=1)
     df = df.drop(columns=['airconditioningdesc', 'airconditioningtypeid', 'heatingorsystemdesc', 'heatingorsystemtypeid', 'regionidcounty'], axis=1)
