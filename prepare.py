@@ -30,7 +30,7 @@ def handle_nulls(df):
 
     df = df.drop(columns=['calculatedbathnbr', 'finishedsquarefeet12', 'fullbathcnt', 'id', 'id.1'], axis=1)
     df = df.drop(columns=['buildingqualitytypeid', 'regionidcity', 'regionidzip', 'regionidneighborhood', 'roomcnt', 'unitcnt'], axis=1)
-    df = df.drop(columns=['numberofstories','structuretaxvaluedollarcnt', 'landtaxvaluedollarcnt', 'taxvaluedollarcnt', 'taxamount', 'assessmentyear'],  axis=1)
+    df = df.drop(columns=['numberofstories','structuretaxvaluedollarcnt', 'taxamount', 'assessmentyear'],  axis=1)
     df = df.drop(columns=['airconditioningdesc', 'airconditioningtypeid', 'heatingorsystemdesc', 'heatingorsystemtypeid', 'regionidcounty'], axis=1)
     df = df.drop(columns=['propertyzoningdesc','censustractandblock', 'rawcensustractandblock'], axis=1)
     df[['garagecarcnt', 'garagetotalsqft']] = df[['garagecarcnt', 'garagetotalsqft']].fillna(0)
@@ -50,7 +50,8 @@ def rename_columns(df):
                     'garagetotalsqft':'garage_size',
                     'poolcnt': 'has_pool',
                     'logerror': 'log_error',
-                   'transactiondate': 'transaction_date'
+                   'transactiondate': 'transaction_date',
+                   'taxdollarvaluecount': 'tax_value'
                   }, inplace=True)
     df['year_built'] = df['year_built'].astype('int')
     df['fips'] = df['fips'].astype('int')
