@@ -7,8 +7,7 @@ def get_zillow_data():
 
     '''
     This function acquires zillow data by accessing a SQL database and performing a SQL query to acquire
-    selected zillow tables and columns and return it to a dataframe. Additionally, data is stored in a .csv 
-    making it more efficient for future utilization of the same function.
+    selected zillow tables and columns and return it to a dataframe.
     '''
 
     filename = 'zillow.csv'
@@ -31,7 +30,5 @@ def get_zillow_data():
         """
 
         df = pd.read_sql(sql, get_db_url('zillow'))
-
-        df.to_csv(filename, index=False)
 
         return df 
